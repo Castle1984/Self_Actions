@@ -21,7 +21,8 @@ jobs:
               run: |
                   npm install
             - name: "运行【步步宝】"
+              if: env.BBB_COOKIE
               run: |
                   node Scripts/bbb.js
               env:
-                  BBBCK: ${{ secrets.BBBCK }}
+                  BBB_COOKIE: ${{ secrets.BBB_COOKIE }}

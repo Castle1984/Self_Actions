@@ -10,7 +10,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: kkd
+    types: baidu_speed
 jobs:
   build:
 
@@ -39,7 +39,7 @@ jobs:
         run: |
           node baidu_speed.js
         env:
-           BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
+          BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
           BAIDU_TASK: ${{ secrets.BAIDU_TASK }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}

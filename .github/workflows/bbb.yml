@@ -30,4 +30,4 @@ jobs:
               run: |
                   node Scripts/bbb.js
               env:
-                  BBB_COOKIE2: ${{ secrets.BBB_COOKIE2 }}     
+                  BBB_COOKIE: ${{ secrets.BBB_COOKIE2 }}     

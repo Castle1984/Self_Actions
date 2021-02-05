@@ -197,13 +197,13 @@ if (!hotsoonsignheaderArr[0]) {
                  hotsoonreadkey = hotsoonreadkeyArr[i];
                  $.index = i + 1;
                  console.log(`\n开始【火山视频极速版${$.index}】`)
-                     //await userinfo()
+                 await userinfo()
                  await sign_in()
                  await treasure_task()
-               //  await control()
-               //  await profit()
-               //  await watch_video()
-              //   await showmsg()
+                 await control()
+                 await profit()
+                 await watch_video()
+                 await showmsg()
              }
          }
 
@@ -225,13 +225,13 @@ if (!hotsoonsignheaderArr[0]) {
              hotsoonreadkey = hotsoonreadkeyArr[i];
              $.index = i + 1;
              console.log(`\n开始【火山视频极速版${$.index}】`)
-                 //await userinfo()
+             await userinfo()
              await sign_in()
              await treasure_task()
-//             await control()
-//             await profit()
-//             await watch_video()
-//             await showmsg()
+             await control()
+             await profit()
+             await watch_video()
+             await showmsg()
          }
      }
 

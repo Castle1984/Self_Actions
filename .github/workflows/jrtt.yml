@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: ZhiYi-N/script
+          repository: ZhiYi-N/Private-Script
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -37,7 +37,7 @@ jobs:
           npm install
       - name: '运行 【今日头条极速版】'
         run: |
-          node jrtt.js
+          node Scripts/jrtt.js
         env:
           JRTTSIGNURL: ${{ secrets.JRTTSIGNURL }}
           JRTTSIGNKEY: ${{ secrets.JRTTSIGNKEY }}
@@ -54,4 +54,4 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          REPOURL: https://github.com/ZhiYi-N/Private-Script/tree/master/Scripts/
+          REPOURL: https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js

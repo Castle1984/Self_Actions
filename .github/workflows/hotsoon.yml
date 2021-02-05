@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          repository: r0ckrise/Self_Actions
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -51,4 +53,4 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          REPOURL: https://github.com/r0ckrise/Self_Actions/blob/master/Scripts/
+          REPOURL: https://raw.githubusercontent.com/r0ckrise/Self_Actions/master/Scripts/hotsoon.js

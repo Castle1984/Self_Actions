@@ -26,7 +26,7 @@ jobs:
               env:
                   BBB_COOKIE: ${{ secrets.BBB_COOKIE }}
              
-             - name: "运行【步步宝】"
+            - name: "运行【步步宝2】"
               run: |
                   node Scripts/bbb.js
               env:

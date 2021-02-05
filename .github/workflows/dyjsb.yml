@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 快看点
+name: 抖音极速版
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'
   watch:
     types: started
   repository_dispatch:
-    types: kkd
+    types: dyjsb
 jobs:
   build:
 
@@ -35,12 +35,17 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【快看点】'
+      - name: '运行 【抖音极速版】'
         run: |
-          node kkd.js
+          node dyjsb.js
         env:
-          KKDHEADER: ${{ secrets.KKDHEADER }}
-          KKDCOOKIE: ${{ secrets.KKDCOOKIE }}
+          SIGNHEADER: ${{ secrets.SIGNHEADER }}
+          SIGNCOOKIE: ${{ secrets.SIGNCOOKIE }}
+          STEPHEADER: ${{ secrets.STEPHEADER }}
+          STEPKEY: ${{ secrets.STEPKEY }}
+          READHEADER: ${{ secrets.READHEADER }}
+          READKEY: ${{ secrets.READKEY }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}

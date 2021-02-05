@@ -26,3 +26,8 @@ jobs:
                   node Scripts/bbb.js
               env:
                   BBB_COOKIE: ${{ secrets.BBB_COOKIE }}
+             if: env.BBB_COOKIE2
+              run: |
+                  node Scripts/bbb.js
+              env:
+                  BBB_COOKIE: ${{ secrets.BBB_COOKIE2 }}     

@@ -13,7 +13,6 @@ on:
     types: hotsoon
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -26,7 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方缓存 Action。
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
         with:
@@ -35,9 +34,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【火山小视频极速版】'
+      - name: "运行 【火山小视频极速版】"
         run: |
-          node hotsoon.js
+          node Scripts/hotsoon.js
         env:
           HOTSOONSIGNHEADER: ${{ secrets. HOTSOONSIGNHEADER }}
           HOTSOONSIGNKEY: ${{ secrets. HOTSOONSIGNKEY }}
@@ -45,6 +44,7 @@ jobs:
           HOTSOONADKEY: ${{ secrets. HOTSOONADKEY }}
           HOTSOONREADHEADER: ${{ secrets. HOTSOONREADHEADER }}
           HOTSOONREADKEY: ${{ secrets. HOTSOONREADKEY }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
@@ -53,4 +53,5 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          REPOURL: https://raw.githubusercontent.com/r0ckrise/Self_Actions/master/Scripts/hotsoon.js
+          # 自定义参数
+          SYNCURL: https://raw.githubusercontent.com/r0ckrise/Self_Actions/master/Scripts/hotsoon.js
